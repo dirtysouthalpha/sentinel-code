@@ -30,3 +30,7 @@ _ref/
 _inkcheck.tsx
 state/
 *.db
+
+# local logs / dumps (never commit)
+*.log
+_audit_dump.txt
