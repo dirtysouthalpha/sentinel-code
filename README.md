@@ -2,15 +2,15 @@
   <img src="assets/banner.svg" alt="sentinel-cli — one AI coding engine, four faces, any model">
 </p>
 
-<p align="center">
-  <strong>One AI coding engine. Four faces. Any model.</strong><br>
-  A streaming agentic loop with real tools — terminal UI, desktop GUI, headless CLI, and MCP server — that runs against any cloud or local provider.
-</p>
+# sentinel-cli
+
+**One AI coding engine, four faces (TUI, desktop GUI, headless CLI, MCP server), any cloud or local model.**
 
 <p align="center">
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-22D3EE?style=flat-square&labelColor=0A0A0F" alt="MIT license"></a>
-  <img src="https://img.shields.io/badge/version-3.2.0-22D3EE?style=flat-square&labelColor=0A0A0F" alt="v3.2.0">
-  <img src="https://img.shields.io/badge/tests-849%20passing-22C55E?style=flat-square&labelColor=0A0A0F" alt="849 tests passing">
+  <a href="https://github.com/dirtysouthalpha/sentinel-code/actions/workflows/ci.yml"><img src="https://github.com/dirtysouthalpha/sentinel-code/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
+  <img src="https://img.shields.io/badge/version-3.3.0-22D3EE?style=flat-square&labelColor=0A0A0F" alt="v3.3.0">
+  <img src="https://img.shields.io/badge/tests-866%20passing-22C55E?style=flat-square&labelColor=0A0A0F" alt="866 tests passing">
   <img src="https://img.shields.io/badge/TypeScript-ESM-22D3EE?style=flat-square&labelColor=0A0A0F" alt="TypeScript ESM">
   <img src="https://img.shields.io/badge/built%20with-MCP-8B5CF6?style=flat-square&labelColor=0A0A0F" alt="MCP client + server">
 </p>
@@ -53,7 +53,8 @@ Most "AI CLIs" are a thin wrapper around one provider's chat endpoint. **Sentine
 ## 📑 Table of Contents
 
 - [The four faces](#-the-four-faces)
-- [Quick start](#-quick-start)
+- [Quickstart](#-quickstart)
+- [Tested on](#%EF%B8%8F-tested-on)
 - [Providers](#-providers)
 - [Features](#-features)
 - [Commands](#-commands)
@@ -84,7 +85,7 @@ Build once; pick how you use it — all share the same engine, tools, and config
 
 ---
 
-## 🚀 Quick start
+## 🚀 Quickstart
 
 ```bash
 git clone https://github.com/dirtysouthalpha/sentinel-code.git
@@ -130,6 +131,20 @@ node dist/cli.js setup
 - **Any OS:** `npm link` from the repo root, then just type `sentinel`.
 
 Full install / update / uninstall details in [`INSTALL.md`](INSTALL.md).
+
+---
+
+## 🖥️ Tested on
+
+Facts only — everything below is taken from what the repo already documents ([`INSTALL.md`](INSTALL.md), [`package.json`](package.json) `engines`, [`.github/workflows/ci.yml`](.github/workflows/ci.yml)).
+
+| Platform | Node.js | How it's exercised |
+|----------|---------|--------------------|
+| Ubuntu 24.04 (GitHub Actions) | 22 | CI on every push/PR: `npm ci` → `npm run lint` → `npm test` → `npm run build` → GUI `vite build` |
+| Windows (PowerShell) | ≥ 20 | `install.bat` / `install.ps1` one-click install; the bash tool runs PowerShell natively |
+| macOS / Linux | ≥ 20 | `npm install && npm run build`, then `npm link` for a global `sentinel` |
+
+Minimum supported runtime is **Node.js 20** (`engines.node >= 20.0.0`). The native desktop window additionally needs a Rust toolchain for Tauri v2. Add your machine via PR if you've run it somewhere else.
 
 ---
 
@@ -295,7 +310,7 @@ See [`CLAUDE.md`](CLAUDE.md) for the full code map and conventions.
 ```bash
 npm run build      # tsup -> dist/ (+ copies builtins into dist/builtin)
 npm run lint       # tsc --noEmit (type-check only — there is no ESLint)
-npm test           # vitest (347 tests)
+npm test           # vitest (866 tests)
 npm run dev        # tsup --watch
 
 # Single test file / single test
