@@ -1,0 +1,15 @@
+# Allowlist for obviously-fake test fixtures in tests/redact.test.ts only.
+# These literals are documented example / fake values, not real secrets.
+[extend]
+useDefault = true
+
+[allowlist]
+regexes = [
+  "sk-abcd1234efgh5678ijkl",
+  "AKIAIOSFODNN7EXAMPLE",
+  "ghp_abcdefghijklmnopqrstuvwxyz0123",
+  "AIzaSyA1234567890abcdefghijklmno",
+  "ak_FNiQcRm2MH3asVQ1gAPX",
+  "uak_xUuNg3sudGE9S6udvstTdUnu7C",
+  "xoxb-12345-abcdef-XYZ"
+]
