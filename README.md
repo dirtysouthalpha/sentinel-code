@@ -19,7 +19,7 @@
   <img src="assets/demo.svg" alt="sentinel --help — one engine, four faces">
 </p>
 
-> 🚀 **New in 3.2 — Production-ready.** Every competitive gap closed:
+> 🚀 **New in 3.3 — Production-ready.** Every competitive gap closed:
 > - **Autonomous loop** — `sentinel loop "fix the bug"` runs unattended until 100%
 > - **Multi-model routing** — cheap turns auto-route to the small model (~3-5× cost cut)
 > - **LSP structural awareness** — go-to-definition, find-references, diagnostics
